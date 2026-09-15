@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen" class="welcome-screen">
+        <div class="welcome-card">
+            <div class="welcome-heart">♥</div>
+            <h1>Would you like to open this gift?</h1>
+            <div class="welcome-actions">
+                <button id="yes-button" type="button" onclick="openPasswordScreen()">Yes</button>
+                <button id="no-button" type="button" onclick="rejectGift()">No</button>
+            </div>
+            <p id="no-response" aria-live="polite"></p>
+        </div>
+    </div>
+
+    <!-- PASSWORD SCREEN -->
+    <div id="password-screen" class="screen">
+
+        <div class="password-box">
+
+            <div class="heart">♥</div>
+
+            <h1>A Surprise...</h1>
+
+            <p>
+                Good luck ☺︎
+            </p>
+
+            <div class="countdown" aria-label="Countdown to September 29">
+                <div class="countdown-unit">
+                    <strong id="countdown-days">00</strong>
+                    <span>days</span>
+                </div>
+                <div class="countdown-unit">
+                    <strong id="countdown-hours">00</strong>
+                    <span>hours</span>
+                </div>
+                <div class="countdown-unit">
+                    <strong id="countdown-minutes">00</strong>
+                    <span>minutes</span>
+                </div>
+                <div class="countdown-unit">
+                    <strong id="countdown-seconds">00</strong>
+                    <span>seconds</span>
+                </div>
+            </div>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter the password"
+            >
+
+            <button onclick="checkPassword()">
+                Open my surprise
+            </button>
+
+            <p id="wrong-password"></p>
+
+        </div>
+
+        <div id="heart-balloons" class="heart-balloons" aria-label="Floating heart balloons"></div>
+
+    </div>
+
+
+    <!-- MAIN WEBSITE -->
+    <main id="website">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="floating-hearts">
+                ♥
+                ♥
+                ♥
+                ♥
+                ♥
+            </div>
+
+            <div class="hero-content">
+
+                <p class="small-text">
+                    To my favorite person in the world, for your special day.
+                </p>
+
+                <h1>
+                    Happy Birthday,
+                    <span>Elizabeth</span> ❤️
+                </h1>
+
+                <p class="subtitle">
+                    I made this little corner of the internet just for you.
+                </p>
+
+                <button class="scroll-button" onclick="scrollToSection('memories')">
+                    ↓ Our memories ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- MEMORIES -->
+        <section id="memories" class="section">
+
+            <p class="section-label">OUR MEMORIES</p>
+
+            <h2>
+                Some of my favorite moments
+            </h2>
+
+            <p class="section-description">
+                Every moment that we spend together will always be a memory I want to keep close to my heart. Here are just a few of the ones that mean the world to me.
+            </p>
+
+            <div class="photo-grid">
+
+                <div class="photo-card">
+                    <img src="images/memory1.jpg" alt="Our first memory" style="width: 100%; height: 330px; object-fit: cover; border-radius: 10px;">
+
+                    <h3>An earlier memory</h3>
+
+                    <p>
+                        One of our first moments where I knew you were someone special to me.
+                    </p>
+                </div>
+
+
+                <div class="photo-card">
+                    <img src="images/memory2.jpg" alt="One of my favorites" style="width: 100%; height: 330px; object-fit: cover; border-radius: 10px;">
+
+                    <h3>One of my favorites</h3>
+
+                    <p>
+                        A memory I'll always keep close to my heart (I know I'm such a great photographer 😎).
+                    </p>
+                </div>
+
+
+                <div class="photo-card">
+                    <video style="width: 100%; height: 330px; object-fit: cover; border-radius: 10px;" controls>
+                        <source src="images/memory3.mp4" type="video/mp4">
+                        Your browser doesn't support video playback.
+                    </video>
+
+                    <h3>Us ❤️</h3>
+
+                    <p>
+                        Every moment with you is a memory I want to keep forever.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REASONS -->
+        <section class="section reasons">
+
+            <p class="section-label">WHY I LOVE YOU</p>
+
+            <h2>
+                Just a few reasons...
+            </h2>
+
+            <div class="reasons-grid">
+
+                <div class="reason">
+                    <div>01</div>
+                    <h3>Your smile</h3>
+                    <p>
+                        It makes everything feel better, even on the worst days. It's always so contagious, I can't help but smile back when I see it.
+                    </p>
+                </div>
+
+                <div class="reason">
+                    <div>02</div>
+                    <h3>Your personality</h3>
+                    <p>
+                        There is genuinely nobody else like you. You're special (and I mean that in the best way possible, but EVERY way). (just jokings).
+                    </p>
+                </div>
+
+                <div class="reason">
+                    <div>03</div>
+                    <h3>The way you make me feel</h3>
+                    <p>
+                        Every day with you is worth remembering. I couldn't possibly imagine spending my time with another.
+                    </p>
+                </div>
+
+                <div class="reason">
+                    <div>04</div>
+                    <h3>Just... you</h3>
+                    <p>
+                        I could list a thousand reasons and still not explain it all. I'm not sure I'll ever be able to put it into words.
+                    </p>
+                </div>
+
+                <div class="reason">
+                    <div>05</div>
+                    <h3>Your heart</h3>
+                    <p>
+                        I always feel such a warmth and comfort when I'm with you. You have the kindest heart of anyone I've ever met.
+                    </p>
+                </div>
+
+                <div class="reason">
+                    <div>06</div>
+                    <h3>How you love me</h3>
+                    <p>
+                        With a gentleness and sincerity always makes me feel like the luckiest person in the world.
+                    </p>
+                </div>
+
+            </div>
+
+            <button class="oshawott-hidden oshawott-reasons" type="button" aria-label="Hidden Oshawott">
+                <img src="images/oshawott.png" alt="Oshawott">
+            </button>
+
+        </section>
+
+
+        <!-- PLAYLIST -->
+        <section class="section playlist-section">
+
+            <p class="section-label">A PLAYLIST FOR YOU</p>
+
+            <h2>
+                Songs that remind me of you
+            </h2>
+
+            <p class="section-description">
+                Every note is all about you.
+            </p>
+
+            <div class="playlist">
+
+                <div class="song-card">
+                    <img src="images/album1.jpg" alt="Album Cover" class="album-cover">
+                    <audio controls class="song-player">
+                        <source src="https://p.scdn.co/mp3-preview/9080d1d8fdee5257b13e3586d8ecb742df2f15e7" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="song-number">01</div>
+                    <h3>Cassiopeia</h3>
+                    <p class="song-artist">Elijah Fox, Lily Honigberg</p>
+                    <a href="https://open.spotify.com/track/6EyxCyZcyen9sXZn4fvgP1?si=9f14a9e4dc2b4e75" target="_blank" class="spotify-link">🎵 Listen on Spotify</a>
+                </div>
+
+                <div class="song-card">
+                    <img src="images/album2.jpg" alt="Album Cover" class="album-cover">
+                    <audio controls class="song-player">
+                        <source src="https://p.scdn.co/mp3-preview/26ffcac06592822c2392d698a59454711ade9f21" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="song-number">02</div>
+                    <h3>I Only Have Eyes for You</h3>
+                    <p class="song-artist">The Flamingos</p>
+                    <p class="song-lyrics">"The moon may be high, but I can't see a thing in the sky, I only have eyes for you."</p>
+                    <a href="https://open.spotify.com/track/3YdKJzcoMZMacISlpY4QoP?si=d6772d57eacd428c" target="_blank" class="spotify-link">🎵 Listen on Spotify</a>
+                </div>
+
+                <div class="song-card">
+                    <img src="images/album3.jpg" alt="Album Cover" class="album-cover">
+                    <audio controls class="song-player">
+                        <source src="https://p.scdn.co/mp3-preview/784e57fb01adf90125a40b04589b3d86bea7b7cf" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="song-number">03</div>
+                    <h3>Liz On Top Of The World</h3>
+                    <p class="song-artist">Dario Marianelli, Jean-Yves Thibaudet</p>
+                    <a href="https://open.spotify.com/track/1nd0AX0VYGQb2pF442YqGj?si=3358869a4a704a6b" target="_blank" class="spotify-link">🎵 Listen on Spotify</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LETTER -->
+        <section class="letter-section">
+
+            <div class="letter">
+
+                <p class="section-label">
+                    A LETTER FOR YOU
+                </p>
+
+                <h2>
+                    Dear love,
+                </h2>
+
+                <p>
+                    Happy birthday to the person who means more to me
+                    than I could ever properly put into words.
+                </p>
+
+                <p>
+                    I hope you know how grateful I am to have you in my life.
+                    Every memory we've made together is something I treasure,
+                    and I can't wait to make so many more with you.
+                </p>
+
+                <p>
+                    You deserve the absolute best today and every day.
+                    I hope this next year brings you everything you want,
+                    because there isn't anyone I'd rather see happy.
+                </p>
+
+                <p>
+                    Thank you for being you.
+                </p>
+
+                <p class="signature">
+                    I love you ❤️
+                </p>
+
+            </div>
+
+            <button class="oshawott-hidden oshawott-letter" type="button" aria-label="Hidden Oshawott">
+                <img src="images/oshawott.png" alt="Oshawott">
+            </button>
+
+        </section>
+
+
+        <!-- FINAL SURPRISE -->
+        <section class="final-section">
+
+            <p class="section-label">
+                ONE LAST THING...
+            </p>
+
+            <h2>
+                I have something to tell you.
+            </h2>
+
+            <button onclick="showFinalMessage()">
+                Click me ❤️
+            </button>
+
+            <div id="final-message">
+
+                <div class="catcher-game" aria-label="Apple catcher game">
+                    <p class="game-instructions">Catch 10 good objects to unlock the gift. Avoid the bad ones.</p>
+
+                    <div class="catcher-hud">
+                        <span>Score: <strong id="catcher-score">0</strong> / 10</span>
+                        <span id="catcher-status">Get ready!</span>
+                    </div>
+
+                    <div id="catcher-world" class="catcher-world" tabindex="0" data-point-image="images/image0.jpg" data-penalty-image="images/bomb.png">
+                        <div class="catcher-sky"></div>
+                        <div id="catcher-basket" class="catcher-basket" aria-label="Catcher">♥</div>
+                    </div>
+
+                    <div class="game-controls" aria-label="Catcher controls">
+                        <button type="button" data-control="left" aria-label="Move left">←</button>
+                        <button type="button" data-control="right" aria-label="Move right">→</button>
+                    </div>
+
+                    <button id="gift" class="gift" type="button" aria-label="Gift" hidden>
+                        <span class="gift-lid"></span>
+                        <span class="gift-box"></span>
+                    </button>
+
+                    <div id="secret-message" class="secret-message" aria-live="polite">
+                        <div class="big-heart">♥</div>
+                        <h2>If ever two were one, then surely we.</h2>
+                        <p>Happy birthday to my amazing girlfriend, I love you, forever and always.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            Made with love, from the BEST boyfriend ever ❤️
+        </footer>
+
+        <section id="oshawott-reward" class="oshawott-reward" aria-live="polite">
+            <p class="section-label">YOU FOUND THEM ALL</p>
+            <h2>A little secret, just for you.</h2>
+            <p>HOORAY!</p>
+
+            <button id="secret-letter-trigger" class="secret-letter-trigger" type="button" aria-label="Open hidden love letter">
+                <span class="envelope-icon">💌</span>
+                <span class="envelope-prompt">Click the envelope to open your hidden letter</span>
+            </button>
+
+            <div id="secret-love-letter" class="secret-love-letter" aria-live="polite">
+                <p class="section-label">A HIDDEN NOTE</p>
+                <p>
+                    9/11 - (preface: I'm typing this over days so I might repeat myself) I made those reasons for why I love you a bit lackluster so this piece would look a bit more extravagant. You're here at this super duper serious age
+                    with me now (we, yes, WE are unc) and I just want to say that I am so proud of you for everything you have accomplished and everything you will accomplish in the future. 
+                    This is only the beginning of our journey together and I am so excited to see what the future holds for us. I want you to know that I will always be here for you,
+                    through the rough times, the funny times, the good times, the bad times, and everything in between. I will always be here to support you, to love you, and to make you laugh (I hope). 
+                    This is tripling as a love letter, a birthday card, and an anniversary card, but I'm not trying to make it seem like any of these days are much more important
+                    than the others. Every day is special with you, and I want you to remember that. 
+                </p>
+                <p> 
+                    9/12 - I always try to be a bit more poetic when I want to write to you or express myself to you. I hope my poetry can convey how I feel in place of my regular words.
+                    I love you, and I cannot ever deny that my heart beats for you. I will care for you always. I hope to give you the very best of me so I can show you a love so full that it may
+                    come out our random conversations, our random moments, and our random memories. I want to give you a love so full that my hands, heart, and soul sings poetry to you.
+                </p>
+                <p>
+                    9/13 - I love you for everything that you are, everything that you have been, and everything that you will be.
+                    I will always be yours and I have no doubt in my mind that you are the one for me. You are the best thing to have ever happened to me and when I'm with you, I never want to leave.
+                    You make me happier than anyone could ever make me and you're always there to shine a light on the darkest, foggiest days. you really are the light that brightens my life.
+                    There is nobody else in this world that is like you and I am so lucky to have you in my life. I would just love to be where you are; I would love to trust you and love you and be wiith you. Only with you, around you,
+                    in all conceivable and inconceivable places. I would like to be wherre you are, forever and always.
+                </p>
+                <p>
+                    9/14 - I look at you and I see the most beautiful person in the world, inside and out. With you, I see that this life must go on forever (I wish it could if it meant it could be with you).
+                    It is so perfect, even with all of its imperfections. You make me feel like I am worth something, like I'm worth every word said and every letter I have ever written. I'm quite choked with tenderness for you, my love,
+                    it is such a different feeling to feel love to strong that it could make me weak. I know I'm jumping around topics, but I'm typing as I think. There are a few things that I want to do for you.
+                    I want to make you feel like the most special person in the world (because you are). I want to make you feel like the most loved person in the world (because you are). I want to make you feel like the most important person in the world (because you are).
+                    I especially want to be able to love you in ways that make your past itself wonder if it even mattered. I want to take the memories that still sting and kiss every bit that hurts and make it feel like it was never there.
+                    I want to hold you so tight that every piece of you that ever felt  alone will learn what it means to be chosen. I want you, every time, in every life, no matter what. Now, as much as I love space and admire the stars, they don't last forever; they all eventually burn out.
+                    I don't mind being temporary wiht you like those stars. I'd paint one thousand more stars in the night sky if it meant you never burnt out.
+                </p>
+                <p> 
+                    9/15 - If my body wouldn't get in the way of touching you, do you think our souls would be able to reach each other on a level deeper than we may know? Would our veins intertwine, your bloodstream merging with mine and eventually
+                    letting every memory flood into my own mind? I want to not only hold you, but to love you, beyond flesh, beyond skin, beyond the names that we give each other. I want to be able to peel back this hidden layer between us
+                    until all that remains is you, so much so that I would eventually know the shape of your soul and the way it moves, the way it breathes, the way it loves.
+                </p>
+                <p class="secret-letter-signature">Forever yours ❤️</p>
+
+                <div class="hidden-poem">
+                    <h3>A poem for you</h3>
+                    <figure class="sun-feature">
+                        <img src="images/nasa-sun-2025-09-27.jpg" alt="A rocket crossing the bright solar disk">
+                        <figcaption>
+                            NASA Astronomy Picture of the Day, September 27, 2025: “A Rocket in the Sun” by Pascal Fouquet.
+                        </figcaption>
+                    </figure>
+                    <p class="poem-stanza">
+                        "You, without sin, are like the sun<br>
+                        Shining bright and warm, a gift from above.
+                    </p>
+                    <p class="poem-stanza">
+                        You, even with sin, are like the sun<br>
+                        Still shining bright, a gift of divine."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="oshawott-peeker" class="oshawott-peeker" type="button" aria-label="Peek-a-boo character">
+        <img src="images/oshawott.png" alt="Oshawott">
+    </button>
+
+    <!-- Change this file path to customize the Oshawott GIF click sound. -->
+    <audio id="oshawott-click-sound" preload="auto">
+        <source src="sounds/oshawott-click.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
