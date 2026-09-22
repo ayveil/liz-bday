@@ -10,7 +10,7 @@ const hints = [
     "The crinkle cut fries...🍟",
     "🐔🐔🐔🐔🐔🐔🐔🐔",
     "You'll figure it out eventually",
-    "HWhy is there only one? ",
+    "Why is there only one? ",
     "Cold and sad looking",
     "Nuh uh, not that one",
     "Closer? Maybe not, these are all random hints.",
