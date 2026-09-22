@@ -5,7 +5,7 @@
 const correctPassword = "chicken finger"; // The correct password for the game
 
 const hints = [
-    "No caps, no punctuation. 🐔",
+    "No caps, no punctuation, just a space. 🐔",
     "Something sad looking? 🥲",
     "The crinkle cut fries...🍟",
     "🐔🐔🐔🐔🐔🐔🐔🐔",
