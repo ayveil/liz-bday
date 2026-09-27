@@ -429,6 +429,279 @@ body {
 
 
 /* =========================
+   BIRTHDAY CAKE
+========================= */
+
+.wish-section {
+    min-height: 92vh;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 45%, #fff8d9 0 5%, #ffe6e9 24%, #fff8f8 72%);
+    position: relative;
+}
+
+.wish-section h2 {
+    margin: 12px 0 5px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 7vw, 78px);
+}
+
+.wish-instructions {
+    color: #765c5c;
+}
+
+.wish-button {
+    position: relative;
+    z-index: 1;
+    margin-top: 42px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #e6cfd2;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 28%, #fff8d9, #f29b75 44%, #c9576c 100%);
+    color: white;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(201,87,108,0.24), 0 0 0 12px rgba(255,255,255,0.45);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.wish-button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 16px 45px rgba(201,87,108,0.3), 0 0 0 18px rgba(255,255,255,0.5);
+}
+
+.wish-button:disabled {
+    cursor: default;
+    opacity: 0.75;
+    transform: scale(0.96);
+}
+
+.wish-message {
+    min-height: 28px;
+    margin-top: 28px;
+    color: #c9576c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+}
+
+.wish-message.wished {
+    animation: reveal 0.8s ease both;
+}
+
+.wish-continue {
+    margin-top: 16px;
+    padding: 13px 23px;
+    border: 0;
+    border-radius: 30px;
+    background: #c9576c;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    animation: reveal 0.7s ease both;
+}
+
+.wish-continue:hover {
+    background: #ae4056;
+    transform: translateY(-3px);
+}
+
+.shooting-star {
+    position: fixed;
+    top: var(--star-top);
+    left: -12vw;
+    z-index: 1150;
+    width: 90px;
+    height: 3px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, transparent, #fff8d9 35%, #ffffff);
+    box-shadow: 0 0 12px 3px rgba(255,212,110,0.75);
+    pointer-events: none;
+    animation: shootingStar var(--star-duration) ease-in var(--star-delay) forwards;
+}
+
+.shooting-star::after {
+    content: "✦";
+    position: absolute;
+    right: -8px;
+    top: -12px;
+    color: #fff8d9;
+    font-size: 26px;
+    text-shadow: 0 0 12px #ffd46e;
+}
+
+.cake-scene {
+    position: relative;
+    width: min(92vw, 650px);
+    height: 350px;
+    margin: 20px auto 5px;
+    cursor: ew-resize;
+    touch-action: none;
+}
+
+.cake-glow {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: 360px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(255, 212, 110, 0.23);
+    filter: blur(20px);
+    transform: translateX(-50%);
+    transition: opacity 0.8s ease;
+}
+
+.birthday-cake {
+    position: absolute;
+    left: 50%;
+    bottom: 28px;
+    width: min(76vw, 390px);
+    height: 210px;
+    transform: translateX(-50%);
+}
+
+.cake-layer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 3px solid #ae4056;
+    background: linear-gradient(90deg, #df6d84, #f09aaa 48%, #d85b70);
+    box-shadow: inset 0 12px rgba(255,255,255,0.22), 0 8px 0 rgba(174,64,86,0.08);
+}
+
+.cake-layer-top {
+    bottom: 98px;
+    height: 78px;
+    border-radius: 26px 26px 14px 14px;
+}
+
+.cake-layer-bottom {
+    bottom: 18px;
+    height: 104px;
+    border-radius: 14px 14px 24px 24px;
+    background: linear-gradient(90deg, #c9576c, #e88499 50%, #c9576c);
+}
+
+.cake-layer::after {
+    content: "•  •  •  •  •  •  •  •";
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    width: 100%;
+    color: rgba(255,248,248,0.7);
+    font-size: 15px;
+    letter-spacing: 8px;
+    white-space: nowrap;
+}
+
+.cake-frosting {
+    position: absolute;
+    top: 42px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff8f8;
+    box-shadow: 0 8px #fff8f8, 0 14px #c9576c;
+}
+
+.cake-frosting::after {
+    content: "";
+    position: absolute;
+    left: 10%;
+    bottom: -19px;
+    width: 24px;
+    height: 30px;
+    border-radius: 0 0 14px 14px;
+    background: #fff8f8;
+    box-shadow: 56px 3px #fff8f8, 115px -2px #fff8f8, 179px 4px #fff8f8, 244px -1px #fff8f8, 300px 3px #fff8f8;
+}
+
+.cake-plate {
+    position: absolute;
+    bottom: 0;
+    left: -7%;
+    width: 114%;
+    height: 28px;
+    border: 3px solid #bd6373;
+    border-radius: 50%;
+    background: #fff8f8;
+}
+
+.birthday-candle {
+    position: absolute;
+    bottom: var(--candle-bottom, 140px);
+    z-index: 3;
+    width: 15px;
+    height: 58px;
+    border: 2px solid #ae4056;
+    border-radius: 8px 8px 4px 4px;
+    background: repeating-linear-gradient(-45deg, #ffd46e 0 6px, #fff0b6 6px 11px);
+    transform: translateX(-50%);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.birthday-candle { left: var(--candle-position); }
+
+.candle-flame {
+    position: absolute;
+    top: -33px;
+    left: 50%;
+    color: #f29b75;
+    font-size: 27px;
+    text-shadow: 0 0 14px #ffd46e;
+    transform: translateX(-50%) rotate(45deg);
+    animation: candleFlicker 0.65s ease-in-out infinite alternate;
+}
+
+.birthday-candle.blown {
+    opacity: 0.65;
+    transform: translate(-50%, 4px);
+}
+
+.birthday-candle.blown .candle-flame {
+    opacity: 0;
+    transform: translate(-50%, 12px) rotate(45deg) scale(0.2);
+}
+
+.cake-message {
+    min-height: 24px;
+    color: #c9576c;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+}
+
+.cake-message.wished {
+    animation: reveal 0.7s ease both;
+}
+
+.cake-continue {
+    margin-top: 16px;
+    padding: 13px 23px;
+    border: 0;
+    border-radius: 30px;
+    background: #c9576c;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+    animation: reveal 0.7s ease both;
+}
+
+.cake-continue:hover {
+    background: #ae4056;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
    SECTIONS
 ========================= */
 
@@ -488,6 +761,24 @@ body {
 
 .photo-card:hover {
     transform: translateY(-8px) rotate(1deg);
+}
+
+.memory-open {
+    margin-top: 12px;
+    padding: 9px 17px;
+    border: 1px solid #e6cfd2;
+    border-radius: 20px;
+    background: #fff8f8;
+    color: #c9576c;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.memory-open:hover {
+    background: #ffe3e7;
+    transform: translateY(-2px);
 }
 
 .photo-placeholder {
@@ -1161,6 +1452,99 @@ footer {
     color: #a17d82;
 }
 
+.memory-dialog {
+    width: min(90vw, 760px);
+    padding: 26px;
+    border: 1px solid #e6cfd2;
+    border-radius: 14px;
+    background: #fff8f8;
+    color: #3d2929;
+    box-shadow: 0 24px 80px rgba(100,40,50,0.24);
+}
+
+.memory-dialog::backdrop {
+    background: rgba(61,41,41,0.48);
+    backdrop-filter: blur(4px);
+}
+
+.memory-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: 0;
+    border-radius: 50%;
+    background: #ffe3e7;
+    color: #c9576c;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.memory-media {
+    margin: 12px 0 20px;
+}
+
+.memory-media img,
+.memory-media video {
+    display: block;
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.memory-dialog h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+}
+
+.memory-dialog p {
+    margin-top: 6px;
+    color: #765c5c;
+}
+
+.memory-note {
+    margin-top: 18px !important;
+    padding: 15px 18px;
+    border-left: 3px solid #c9576c;
+    background: #ffe9ec;
+    color: #c9576c !important;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1090;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #e6cfd2;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: #c9576c;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #ffe3e7;
+}
+
 .oshawott-reward {
     display: none;
     padding: 70px 20px 90px;
@@ -1413,6 +1797,20 @@ footer {
     }
 }
 
+@keyframes shootingStar {
+    from {
+        opacity: 0;
+        transform: translateX(0) rotate(-5deg);
+    }
+    12% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateX(125vw) rotate(-5deg);
+    }
+}
+
 @keyframes catchHeartSplash {
     0% {
         opacity: 1;
@@ -1552,6 +1950,22 @@ footer {
         padding: 40px 25px;
     }
 
+    .memory-dialog {
+        padding: 20px;
+    }
+
+    .back-to-top {
+        right: 14px;
+        bottom: 14px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shooting-star {
+        animation-duration: 0.01ms;
+        animation-delay: 0s;
+    }
 }
 
 @keyframes heartBalloonRise {

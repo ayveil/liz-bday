@@ -22,6 +22,82 @@ let noClickCount = 0;
 let giftHasBeenOpened = false;
 let pageBottomReached = false;
 
+function initMemoryGallery() {
+    const dialog = document.getElementById("memory-dialog");
+    const mediaContainer = document.getElementById("memory-media");
+    const title = document.getElementById("memory-dialog-title");
+    const description = document.getElementById("memory-dialog-description");
+    const note = document.getElementById("memory-dialog-note");
+
+    document.querySelectorAll(".memory-open").forEach((button) => {
+        button.addEventListener("click", () => {
+            const media = document.createElement(button.dataset.memoryType === "video" ? "video" : "img");
+            media.src = button.dataset.memoryMedia;
+            media.alt = button.dataset.memoryTitle;
+            if (button.dataset.memoryType === "video") {
+                media.controls = true;
+                media.autoplay = true;
+            }
+            mediaContainer.replaceChildren(media);
+            title.textContent = button.dataset.memoryTitle;
+            description.textContent = button.dataset.memoryDescription;
+            note.textContent = button.dataset.memoryNote;
+            dialog.showModal();
+        });
+    });
+
+    document.getElementById("memory-close").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+    });
+    dialog.addEventListener("close", () => mediaContainer.replaceChildren());
+}
+
+function initBackToTop() {
+    const button = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", () => {
+        button.classList.toggle("visible", window.scrollY > 500);
+    }, { passive: true });
+
+    button.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
+
+function initWishStars() {
+    const button = document.getElementById("wish-button");
+    const message = document.getElementById("wish-message");
+    const continueButton = document.getElementById("wish-continue");
+    const wishSound = document.getElementById("wish-stars-sound");
+
+    button.addEventListener("click", () => {
+        button.disabled = true;
+        button.textContent = "Wish sent ✦";
+        message.textContent = "The stars heard you. ❤️";
+        message.classList.add("wished");
+        wishSound.currentTime = 0;
+        wishSound.play().catch(() => {});
+
+        for (let index = 0; index < 12; index += 1) {
+            const star = document.createElement("span");
+            const duration = 1.4 + Math.random() * 1.1;
+            star.className = "shooting-star";
+            star.style.setProperty("--star-top", `${10 + Math.random() * 76}vh`);
+            star.style.setProperty("--star-duration", `${duration}s`);
+            star.style.setProperty("--star-delay", `${Math.random() * 0.8}s`);
+            document.body.appendChild(star);
+            window.setTimeout(() => star.remove(), (duration + 1) * 1000);
+        }
+
+        window.setTimeout(() => {
+            continueButton.hidden = false;
+        }, 1700);
+    });
+}
+
+initMemoryGallery();
+initBackToTop();
+initWishStars();
+
 function updateOshawottPeekerVisibility() {
 
     if (giftHasBeenOpened && pageBottomReached) {

@@ -107,11 +107,37 @@
                     I made this little corner of the internet just for you.
                 </p>
 
-                <button class="scroll-button" onclick="scrollToSection('memories')">
+                <button class="scroll-button" onclick="scrollToSection('birthday-cake')">
                     ↓ Our memories ↓
                 </button>
 
             </div>
+
+        </section>
+
+
+        <!-- WISH -->
+        <section id="birthday-cake" class="wish-section">
+
+            <p class="section-label">BEFORE WE BEGIN...</p>
+
+            <h2>Make a wish</h2>
+
+            <p class="wish-instructions">
+                Send your wish up to the stars.
+            </p>
+
+            <button id="wish-button" class="wish-button" type="button">
+                Make a wish ✦
+            </button>
+
+            <p id="wish-message" class="wish-message" aria-live="polite">
+                The stars are waiting...
+            </p>
+
+            <button id="wish-continue" class="wish-continue" type="button" onclick="scrollToSection('memories')" hidden>
+                Now, show me our memories ↓
+            </button>
 
         </section>
 
@@ -134,6 +160,10 @@
                 <div class="photo-card">
                     <img src="images/memory1.jpg" alt="Our first memory" style="width: 100%; height: 330px; object-fit: cover; border-radius: 10px;">
 
+                    <button class="memory-open" type="button" data-memory-media="images/memory1.jpg" data-memory-type="image" data-memory-title="An earlier memory" data-memory-description="One of our first moments where I knew you were someone special to me." data-memory-note="I genuinely could not believe I was seeing you and I could not believe I was right there with you. It honestly felt like a dream, but I'd relive that those first few weeks with you over and over again if I could.">
+                        Open memory
+                    </button>
+
                     <h3>An earlier memory</h3>
 
                     <p>
@@ -144,6 +174,10 @@
 
                 <div class="photo-card">
                     <img src="images/memory2.jpg" alt="One of my favorites" style="width: 100%; height: 330px; object-fit: cover; border-radius: 10px;">
+
+                    <button class="memory-open" type="button" data-memory-media="images/memory2.jpg" data-memory-type="image" data-memory-title="One of my favorites" data-memory-description="A memory I'll always keep close to my heart." data-memory-note="I thought this was such a special day. I had such a great time and I hope we can do something similar again in the near future.">
+                        Open memory
+                    </button>
 
                     <h3>One of my favorites</h3>
 
@@ -158,6 +192,10 @@
                         <source src="images/memory3.mp4" type="video/mp4">
                         Your browser doesn't support video playback.
                     </video>
+
+                    <button class="memory-open" type="button" data-memory-media="images/memory3.mp4" data-memory-type="video" data-memory-title="Us ❤️" data-memory-description="Every moment with you is a memory I want to keep forever." data-memory-note="I was falling in love again this entire time. I've never done something like that with anyone before, and these are moments that I remember much more often than you might assume.">
+                        Open memory
+                    </button>
 
                     <h3>Us ❤️</h3>
 
@@ -507,6 +545,16 @@
 
     </main>
 
+    <dialog id="memory-dialog" class="memory-dialog" aria-labelledby="memory-dialog-title">
+        <button id="memory-close" class="memory-close" type="button" aria-label="Close memory">×</button>
+        <div id="memory-media" class="memory-media"></div>
+        <h2 id="memory-dialog-title"></h2>
+        <p id="memory-dialog-description"></p>
+        <p id="memory-dialog-note" class="memory-note"></p>
+    </dialog>
+
+    <button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
     <button id="oshawott-peeker" class="oshawott-peeker" type="button" aria-label="Peek-a-boo character">
         <img src="images/oshawott.png" alt="Oshawott">
     </button>
@@ -514,6 +562,11 @@
     <!-- Change this file path to customize the Oshawott GIF click sound. -->
     <audio id="oshawott-click-sound" preload="auto">
         <source src="sounds/oshawott-click.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Add your shooting-star sound at sounds/wish-stars.mp3, or change this path. -->
+    <audio id="wish-stars-sound" preload="auto">
+        <source src="sounds/wish-stars.mp3" type="audio/mpeg">
     </audio>
 
     <script src="script.js"></script>
