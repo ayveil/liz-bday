@@ -470,7 +470,7 @@ function startPlatformer() {
                 const isGood = item.dataset.good === "true";
                 score = Math.max(0, score + (isGood ? 1 : -1));
                 scoreElement.textContent = score;
-                status.textContent = isGood ? "+1 point!" : "-1 point!";
+                status.textContent = isGood ? "holay molay" : "womp womp";
                 if (isGood) {
                     playCatchSound("good");
                     createCatchSplash(world, player);
